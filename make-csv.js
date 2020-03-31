@@ -25,6 +25,11 @@ const formattedList = list.map(o => ({
 }))
 
 
+console.log('yo')
+fs.writeFileSync('./out.json', JSON.stringify(formattedList, null, 2))
+
+
+
 function printSectors() {
 	const sectors = _.sortBy(_.uniq(list.map(i => i.sector.split("\n")).flat()))
 	console.log(sectors.join("\n - "))
@@ -57,6 +62,5 @@ function printList() {
 		fs.writeFileSync('./out.csv', data)
 	})
 }
-
 
 // printStages()
